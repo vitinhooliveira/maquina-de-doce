@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-import './header.css'
-
-
 
 export default function Header({saldo, troco, setSaldo}){
-    const cor = true
     return(
         <div>
             <Grid container spacing={2}>
-                <Grid item xs={12} className='gridheader'>
-                    <Typography variant="h5" gutterBottom component="div" className='typographyh5'>
+                <Grid item xs={12} style={{display:'flex', margin:'0.5% 0 0.5% 36%'}}>
+                    <Typography variant="h4" gutterBottom component="div" style={{padding:'0 40% 0 0'}}>
                         MÁQUINA DE DOCE
                     </Typography>
-                    <Button variant="outlined" color='error'>Saldo R$: {saldo}</Button>
-                    <Button variant="contained" className='troco'onClick={()=>setSaldo(saldo - troco)}>Troco R$: {troco}</Button>
+                    {saldo>=6? <Button variant="outlined">Saldo R$: {saldo}</Button>: <Button variant="outlined" color='error'>Saldo R$: {saldo}</Button>}
+                    <Button style={{margin:'0 0 0 2%'}} variant="contained" onClick={()=>setSaldo(saldo - troco)}>Troco R$: {troco}</Button>
                 </Grid>
             </Grid>
         </div>
