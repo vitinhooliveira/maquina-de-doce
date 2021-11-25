@@ -4,7 +4,14 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 
-export default function Header({saldo, troco, setSaldo}){
+export default function Header({saldo, troco, setSaldo, setDoce, doce}){
+    
+    const setTroco = () =>{
+        setSaldo(saldo - troco)
+        setDoce(doce - 1)
+
+    }
+
     return(
         <div>
             <Grid container spacing={2}>
@@ -13,7 +20,7 @@ export default function Header({saldo, troco, setSaldo}){
                         MÁQUINA DE DOCE
                     </Typography>
                     {saldo>=6? <Button variant="outlined">Saldo R$: {saldo}</Button>: <Button variant="outlined" color='error'>Saldo R$: {saldo}</Button>}
-                    <Button style={{margin:'0 0 0 2%'}} variant="contained" onClick={()=>setSaldo(saldo - troco)}>Troco R$: {troco}</Button>
+                    <Button style={{margin:'0 0 0 2%'}} variant="contained" onClick={()=>setTroco()}>Troco R$: {troco}</Button>
                 </Grid>
             </Grid>
         </div>

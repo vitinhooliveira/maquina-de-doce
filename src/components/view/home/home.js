@@ -10,9 +10,9 @@ export default function Home(){
     return (
         
         <div>
-            <Header saldo={saldo} troco={saldo} setSaldo={setSaldo} />
+            <Header saldo={saldo} troco={saldo} setSaldo={setSaldo} setDoce={setDoce} doce={doce} />
             <Main setSaldo={setSaldo} saldo={saldo} setDoce={setDoce} doce={doce}/>
-            <Footer setSaldo={setSaldo} saldo={saldo} setDoce={setDoce} doce={doce}/>
+            <Footer setSaldo={setSaldo} saldo={saldo}doce={doce}/>
         </div>
     )
        
