@@ -3,7 +3,14 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-export default function Footer({setSaldo, saldo}){
+export default function Footer({setSaldo, saldo, setDoce, doce}){
+
+    const Moeda1Negativa=<Button style={{margin:'0 0 0 2%', 'opacity':'0.3'}} variant="outlined">Moeda R$: 1,00</Button>
+    const Moeda1Positivo=<Button style={{margin:'0 0 0 2%', cursor: 'pointer'}} variant="outlined" onClick={()=> setSaldo(saldo+1)}>Moeda R$: 1,00</Button>
+    const Moeda2Negativa=<Button style={{margin:'0 0 0 2%', 'opacity':'0.3'}} variant="outlined">Moeda R$: 2,00</Button>
+    const Moeda2Positivo=<Button style={{margin:'0 0 0 2%', cursor: 'pointer'}} variant="outlined" onClick={()=> setSaldo(saldo+2)}>Moeda R$: 2,00</Button>
+    const Moeda5Negativa=<Button style={{margin:'0 0 0 2%', 'opacity':'0.3'}} variant="outlined">Moeda R$: 5,00</Button>
+    const Moeda5Positivo=<Button style={{margin:'0 0 0 2%', cursor: 'pointer'}} variant="outlined" onClick={()=> setSaldo(saldo+5)}>Moeda R$: 5,00</Button>
     return(
         <div>
             <Grid container spacing={2}>
@@ -11,9 +18,9 @@ export default function Footer({setSaldo, saldo}){
                     <Typography variant="h6" gutterBottom component="div" style={{padding:'0 2% 0 0'}}>
                         Valores
                     </Typography>
-                    <Button style={{margin:'0 0 0 2%'}} variant="outlined" onClick={()=> setSaldo(saldo+1)}>Moeda R$: 1,00</Button>
-                    <Button style={{margin:'0 0 0 2%'}} variant="outlined" onClick={()=> setSaldo(saldo+2)}>Moeda R$: 2,00</Button>
-                    <Button style={{margin:'0 0 0 2%'}} variant="outlined" onClick={()=> setSaldo(saldo+5)}>Moeda R$: 5,00</Button>
+                    {doce<1? Moeda1Positivo:Moeda1Negativa}
+                    {doce<1? Moeda2Positivo:Moeda2Negativa}
+                    {doce<1? Moeda5Positivo:Moeda5Negativa}
                 </Grid>
             </Grid>
         </div>
