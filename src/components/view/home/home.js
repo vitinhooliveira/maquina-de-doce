@@ -13,7 +13,6 @@ export default function Home(){
             <Header saldo={saldo} troco={saldo} setSaldo={setSaldo} setDoce={setDoce} doce={doce} />
             <Main setSaldo={setSaldo} saldo={saldo} setDoce={setDoce} doce={doce}/>
             <Footer setSaldo={setSaldo} saldo={saldo}doce={doce}/>
-            <h2>teste</h2>
         </div>
     )
        
